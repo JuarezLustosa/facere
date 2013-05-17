@@ -1,0 +1,9 @@
+<ul class="nav">
+  <li><%= link_to "My List", lists_path %></li>
+  <li><%= link_to "My Favorites" %></li>
+  <li><%= link_to "Public", publics_path %></li>
+
+  <% if user_signed_in? %>
+    <li><%= link_to "Sing Out", destroy_user_session_path, :method=>'delete' %></li>
+  <% end %>  
+</ul>

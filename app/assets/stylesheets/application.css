@@ -1,0 +1,52 @@
+/*
+ *= require_self
+ *= require_tree .
+ *= require bootstrap
+ */
+  
+ body {
+   padding-top: 40px;
+   padding-bottom: 60px;
+ }
+ 
+ ul.list {
+   width: 100%;
+   text-align: left;
+   margin: 10px 0;
+   font-size: 14px; 
+ }
+ 
+ ul.list li {
+  vertical-align: middle;
+  height: 50px;
+  line-height: 50px;
+  list-style: none outside;
+  padding-left: 10px;
+  border: 1px solid #e5e5e5;
+  border-bottom: none; 
+ }
+  
+ ul.list li:hover {
+  background: #E4F4FF !important;
+  border: 3px solid #e5e5e5; 
+ }
+ 
+ ul.list li:hover span {
+  color: #696969;
+  font-style: bold; 
+ }
+ 
+ ul.list li:last-child { border-bottom: 1px solid #e5e5e5; }
+ ul.list li:nth-child(even) { background-color: #f7f7f7; }
+ ul.list li:nth-child(odd) { background-color: #ffffff; }
+
+ ul.list li a {
+   display: block;
+   color: #6B6B6B !important;
+   cursor: pointer; 
+ }
+ 
+ ul.list li span {
+   color: #363636;
+   font-style: italic; 
+ }
