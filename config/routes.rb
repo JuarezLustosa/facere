@@ -8,5 +8,5 @@ Facere::Application.routes.draw do
   resources :favorites, :only => [:index, :create, :destroy]
   resources :publics, :only => :index
   
-  root :to => "home#index"
+  root :to => "lists#index"
 end
