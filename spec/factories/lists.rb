@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :list do
-    description "MyString"
+    description "My list"
     public false
-    user nil
+    association :user, factory: :user, email: "jon2@example.com"
   end
 end
