@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   respond_to :js
   
   def index
-    @favorites = Favorite.all
+    @favorites = current_user.favorites
   end
   
   def create
