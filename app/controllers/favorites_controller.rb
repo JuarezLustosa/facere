@@ -15,6 +15,9 @@ class FavoritesController < ApplicationController
   end
   
   def destroy
-
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
+    
+    respond_with @favorite
   end
 end
