@@ -1,17 +1,15 @@
 <%= simple_form_for @list do |f| %>
 
-  <% if notification = f.error_notification %>
+  <% if error = f.error_notification %>
     <div class="alert alert-error fade in">
       <a class="close" data-dismiss="alert" href="#">&times;</a>
-      <%= notification %>
+      <%= error %>
     </div>
     
   <% end %>
-
-  <legend>List</legend>
   
   <%= f.input :description, 
-              :input_html => { :class => "span6" },
+              :input_html => { :class => "span6", :autofocus => true },
               :placeholder => "Add list name" %>
               
   <%= f.input :public, :as => :boolean %>
