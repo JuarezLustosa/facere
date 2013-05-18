@@ -8,12 +8,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'thin'
 gem 'responders'
-
-gem 'sqlite3', :groups => [:test, :development]
-
-group :production do
-  gem 'pg'
-end
+gem 'pg'
 
 group :development, :test do
   gem 'rspec', '~>2.5'
