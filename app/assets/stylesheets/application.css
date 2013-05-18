@@ -9,6 +9,14 @@
    padding-bottom: 60px;
  }
  
+ .alert p.error_notification {
+   margin-bottom: 0;
+ }
+ 
+ #inline_field {
+   display: inline-block;
+ }
+ 
  ul.list {
    width: 100%;
    text-align: left;
