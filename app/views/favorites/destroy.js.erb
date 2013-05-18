@@ -1,3 +1,2 @@
-var ele = $(".favorite_<%= @favorite.list_id%>")
-
-ele.html("<%= escape_javascript(render :partial => 'publics/link_to', :locals => {:list => @favorite.list_id}) %>");
+var ele = $(".favorite_<%= params[:list_id]%>")
+ele.html("<%= escape_javascript(render :partial => 'publics/link_to', :locals => {:list => params[:list_id]}) %>");
