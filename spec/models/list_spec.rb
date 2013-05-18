@@ -1,10 +1,9 @@
 require 'spec_helper'
 
 describe List do
-  let!(:user) { FactoryGirl.create(:user)  }
   let(:list) { List.new(:description => "My list of to do", 
                         :public      => true,
-                        :user        => user) }
+                        :user        => stub_model(User)) }
   
   describe "validate presence" do
     it "description" do
