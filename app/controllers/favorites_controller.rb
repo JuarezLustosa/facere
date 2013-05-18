@@ -1,6 +1,10 @@
 class FavoritesController < ApplicationController
   respond_to :js
   
+  def index
+    @favorites = Favorite.all
+  end
+  
   def create
     @favorite = Favorite.new
     @favorite.list = List.find(params[:list_id])
