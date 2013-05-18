@@ -1,0 +1,26 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  reconnect: true
+  min_messages: warning
+  pool: 15
+  timeout: 5000
+
+development:
+  <<: *defaults
+  database: facere_development
+  username: facere
+  password: facere
+
+test:
+  <<: *defaults
+  database: facere_test
+  username: facere
+  password: facere
+
+production:
+  <<: *defaults
+  database: facere_test
+  username: facere
+  password: facere
+  
