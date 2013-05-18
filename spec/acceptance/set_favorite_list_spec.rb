@@ -12,14 +12,18 @@ feature "Set a favorite list", %q{
     sign_in
     public_list
   end
-
-  scenario "set a list", :js => true do
+    
+  scenario "set a favorite list", :js => true do
     visit publics_path
     
     within ".favorite_#{public_list.id}" do
-      click_link "Add Favorite"
-      page.has_link? "Remove Favorite"
-      page.has_no_link? "Add Favorite"
+      add_favorite
     end
+  end
+  
+  def add_favorite
+    click_link "Add Favorite"
+    page.has_link? "Remove Favorite"
+    page.has_no_link? "Add Favorite"
   end
 end
