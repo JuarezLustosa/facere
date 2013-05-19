@@ -4,10 +4,6 @@ class Favorite < ActiveRecord::Base
   attr_accessible :user, :list
   
   delegate :description, :to => :list, :allow_nil => true, :prefix => true
-  
   validates_presence_of :user, :list
-
-  def self.user_list?(user_id, list_id)
-    find_by_user_id_and_list_id(user_id, list_id).present?
-  end
+  
 end
