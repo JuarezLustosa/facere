@@ -6,19 +6,18 @@ end
 describe SwitchButtonPresenter do
   include ActionView::TestCase::Behavior 
 
-  let(:user) { User }
+  let(:favorite) { Favorite }
   let(:list) { List }
-  let(:switch_button) { SwitchButtonPresenter.call(user, list, view) }
-  
-  context "return link" do
+    
+  context "return link_to" do
     it "add" do
-      switch_button.stub(:has_favorite?).and_return(false)
-      switch_button.should include("Add Favorite")
+      switch_button =  SwitchButtonPresenter.call(favorite, list, view)
+      switch_button.should include("Remove")
     end
 
     it "remove" do
-      switch_button.stub(:has_favorite?).and_return(true)
-      switch_button.should include("Remove")
+      switch_button =  SwitchButtonPresenter.call(nil, list, view)
+      switch_button.should include("Add Favorite")
     end
   end
 end

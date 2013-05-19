@@ -1,25 +1,27 @@
 class SwitchButtonPresenter
-  attr_reader :user, :list, :template
+  attr_reader :favorite, :list, :template
   
-  def self.call(user, list, template)
-    SwitchButtonPresenter.new(user, list, template).call
+  def self.call(favorite, list, template)
+    SwitchButtonPresenter.new(favorite, list, template).call
   end
   
-  def initialize(user, list, template)
-    @user, @list, @template = user, list, template
+  def initialize(favorite, list, template)
+    @favorite, @list, @template = favorite, list, template
   end
   
   def call
     has_favorite? ? remove_button : add_button
   end
   
-  def favorite
-    @favorite = FavoriteAbility.new(@user, @list).search
-  end
-  
   def html
     @template
   end
+  
+  def has_favorite?
+    @favorite.present?
+  end
+  
+  private 
     
   def remove_button
     link_to_remote(
@@ -39,10 +41,6 @@ class SwitchButtonPresenter
     )
   end
   
-  def has_favorite?
-    @favorite.present?
-  end
-
   def link_to_remote(content, path, options= {})
     options.merge!(:remote => true )
     html.link_to content, path, options

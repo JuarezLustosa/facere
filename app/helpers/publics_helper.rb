@@ -1,5 +1,6 @@
 module PublicsHelper
   def switch_button(list)
-    SwitchButtonPresenter.call(current_user, list, self)
+    favorite = FavoriteAbility.new(current_user, list).search
+    SwitchButtonPresenter.call(favorite, list, self)
   end
 end
