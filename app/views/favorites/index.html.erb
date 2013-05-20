@@ -1,13 +1,13 @@
 <h1>My Favorites Lists</h1>
-<table class="table table-bordered">
-  <% if @favorites.any? %>
-    <tbody>
-      <% @favorites.each do |favorite| %>
-        <tr id="favorite">
-          <td><%= favorite.list_description %></td>
-        </tr>
-      <% end %>
-    </tbody>
+  <% if has_user_favorite_list? %>
+    <table class="table table-bordered">
+      <tbody>
+        <% @favorites.each do |favorite| %>
+          <tr id="favorite">
+            <td><%= favorite.list_description %></td>
+          </tr>
+        <% end %>
+      </tbody>
   <% else %>
     <p class="lead"> You don't have any favorite lists'</p>
   <% end %>  
