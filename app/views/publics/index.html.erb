@@ -1,18 +1,25 @@
 <div id="public_list">
   <h1>Publics Lists</h1>
+  <hr class="featurette-divider">
   <% if @lists.present? %>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped table-hover">
       <tbody>
         <% @lists.each do |list| %>
-          <tr>
-            <td><%= list.description %></td>
+          <tr class='lists'>
+            <td class="description"><%= list.description %></td>
+            
             <td class="favorite_<%= list.id %> small">
               <%= render 'link_to', :list => list %>
             </td>
+          </tr>         
+
+          <tr id="tasks", class="hide">
+            <%= render 'tasks', :list => list %>
           </tr>
         <% end %>
       </tbody>
     </table>
+    
     <% else %>
       <p class="lead"> Don't have any public list </p>
     <% end %>

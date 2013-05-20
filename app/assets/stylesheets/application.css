@@ -9,6 +9,10 @@
    padding-bottom: 60px;
  }
  
+ .hide {
+   display: none;
+ }
+ 
  .alert p.error_notification {
    margin-bottom: 0;
  }

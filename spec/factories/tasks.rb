@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :task do
-    description "MyString"
-    list nil
+    description "My Task"
+    list
   end
 end

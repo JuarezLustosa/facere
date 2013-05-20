@@ -8,4 +8,5 @@ class List < ActiveRecord::Base
   validates_presence_of :description, :user
   
   scope :publics, where(:public => true)
+  scope :includes_tasks, includes(:tasks)
 end
