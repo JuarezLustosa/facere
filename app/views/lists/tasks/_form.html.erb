@@ -1,14 +1,12 @@
 <%= simple_form_for [@list, @task ||= Task.new], :remote => true do |f| %>
-  <div class="inline_field">
-    <legend>TODO</legend>
-    <%= f.input :description, 
-                :placeholder => "Press enter or click in Add to insert a task", 
-                :input_html => {:class => "span12", :autofocus => true} %>
-                
-                
-    <%= f.button :submit, "Add", :class => 'btn-primary button_right' %>
+  <legend>TODO</legend>
+  <%= f.input :description, 
+              :placeholder => "Press enter or click in Add to insert a task", 
+              :input_html => {:class => "span12", :autofocus => true} %>
+              
+              
+  <%= f.button :submit, "Add", :class => 'btn-primary button_right' %>
     
-  </div>
   <ol id="task">
     <%= render 'lists/tasks/list', :list => @list %>
   </ol>
