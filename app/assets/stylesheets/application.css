@@ -13,10 +13,12 @@
    margin-bottom: 0;
  }
  
- #inline_field {
-   display: inline-block;
- }
- 
+ .small {
+   width: 1px;
+   white-space: nowrap;
+   text-align: center;  
+  }
+  
  ul.list {
    width: 100%;
    text-align: left;
