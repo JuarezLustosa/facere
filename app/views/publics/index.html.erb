@@ -1,15 +1,19 @@
 <div id="public_list">
   <h1>Publics Lists</h1>
-  <table class="table table-bordered table-striped">
-    <tbody>
-      <% @lists.each do |list| %>
-        <tr>
-          <td><%= list.description %></td>
-          <td class="favorite_<%= list.id %> ">
-            <%= render 'link_to', :list => list %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <% if @lists.present? %>
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <% @lists.each do |list| %>
+          <tr>
+            <td><%= list.description %></td>
+            <td class="favorite_<%= list.id %> small">
+              <%= render 'link_to', :list => list %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% else %>
+      <p class="lead"> Don't have any public list </p>
+    <% end %>
 </div>
