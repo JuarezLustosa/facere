@@ -6,9 +6,7 @@ class FavoritesController < ApplicationController
   end
   
   def create
-    list = List.find(params[:list_id])
-    @favorite = current_user.favorites.create(:list => list)
-
+    @favorite = AddToFavoriteContext.call(current_user, List.find(params[:list_id]))
     respond_with @favorite
   end
   
