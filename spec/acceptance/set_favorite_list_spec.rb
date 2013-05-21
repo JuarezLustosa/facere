@@ -18,7 +18,14 @@ feature "Set a favorite list", %q{
 
     within ".favorite_#{public_list.id}" do
       add_favorite
+      remove_favorite
     end
+  end
+  
+  def remove_favorite
+    click_link "Remove Favorite"
+    page.has_link? "Add Favorite"
+    page.has_no_link? "Remove Favorite"
   end
   
   def add_favorite
