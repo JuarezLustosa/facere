@@ -18,7 +18,7 @@ class SwitchButtonPresenter
   end
   
   def has_favorite?
-    @favorite.present?
+    !!@favorite
   end
   
   private 
