@@ -2,6 +2,13 @@
 <hr class="featurette-divider">
   <% if has_user_favorite_list? %>
     <table class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th>List name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
       <tbody>
         <% @favorites.each do |favorite| %>
           <tr class='lists'>

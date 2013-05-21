@@ -3,6 +3,13 @@
   <hr class="featurette-divider">
   <% if @lists.present? %>
     <table class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th>List name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      
       <tbody>
         <% @lists.each do |list| %>
           <tr class='lists'>
