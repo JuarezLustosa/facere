@@ -6,7 +6,7 @@ feature "Publics Lists", %q{
   To see what others users are doing
 } do
   
-  let(:public_list) { FactoryGirl.create(:list_with_tasks, :public => true, :user => current_user) }
+  let(:public_list) { FactoryGirl.create(:list_with_tasks, :public => true, :owner => current_user) }
   
   background do
     sign_in

@@ -7,7 +7,7 @@ class ListsController < ApplicationController
   end
   
   def create
-    @list.user = current_user
+    @list.owner = current_user
     @list.save
     
     respond_with @list

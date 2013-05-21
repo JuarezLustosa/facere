@@ -6,7 +6,7 @@ feature "Set a favorite list", %q{
   To see wich list I like
 } do
   
-  let(:public_list) { FactoryGirl.create(:list, :public => true, :user => current_user) }
+  let(:public_list) { FactoryGirl.create(:list, :public => true, :owner => current_user) }
   
   background do
     sign_in

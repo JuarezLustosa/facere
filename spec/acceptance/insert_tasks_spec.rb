@@ -6,7 +6,7 @@ feature "Insert tasks in my list", %q{
   To remind me what to do
 } do
   
-  let(:list) { FactoryGirl.create(:list, :user => current_user) }
+  let(:list) { FactoryGirl.create(:list, :owner => current_user) }
   
   background do
     sign_in

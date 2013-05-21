@@ -3,7 +3,7 @@ require 'spec_helper'
 describe List do
   let(:list) { List.new(:description => "My list of to do", 
                         :public      => true,
-                        :user        => stub_model(User)) }
+                        :owner        => stub_model(User)) }
   
   describe "validate presence" do
     it "description" do
@@ -12,7 +12,7 @@ describe List do
     end
     
     it "user" do
-      list.user = nil 
+      list.owner = nil 
       list.should be_invalid
     end        
   end
