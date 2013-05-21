@@ -1,11 +1,17 @@
 <h1>My Favorites Lists</h1>
+<hr class="featurette-divider">
   <% if has_user_favorite_list? %>
-    <table class="table table-bordered">
+    <table class="table table-bordered table-striped table-hover">
       <tbody>
         <% @favorites.each do |favorite| %>
-          <tr id="favorite">
-            <td><%= favorite.list_description %></td>
+          <tr class='lists'>
+            <td class="description"><%= favorite.list_description %></td>
+            <td class='small'><img src="assets/listasks.png" class="img-rounded"></td>
           </tr>
+
+          <tr id="tasks", class="hide">
+            <%= render 'publics/tasks', :list => favorite.list %>
+          </tr>          
         <% end %>
       </tbody>
   <% else %>

@@ -15,7 +15,7 @@ feature "Set a favorite list", %q{
     
   scenario "set a favorite list", :js => true do
     visit publics_path
-    
+
     within ".favorite_#{public_list.id}" do
       add_favorite
     end
