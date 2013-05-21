@@ -1,8 +1,5 @@
 require 'spec_helper'
 
-class List
-end
-
 describe SwitchButtonPresenter do
   include ActionView::TestCase::Behavior 
 
