@@ -1,0 +1,3 @@
+- Apllication for manage TODO lists. Helping you on your day by day.
+
+- Use Postgres for Integration Test.
