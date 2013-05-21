@@ -6,7 +6,7 @@ feature "Favorite List", %q{
   To check, which list I like
 } do
   
-  let(:list) { FactoryGirl.create(:list, :user => current_user) }
+  let(:list) { FactoryGirl.create(:list) }
   
   let(:my_favorite) { 
     FactoryGirl.create(:favorite, :user => current_user, :list => list) 
@@ -19,9 +19,9 @@ feature "Favorite List", %q{
 
   scenario "see my favorite list" do
     visit favorites_path
-    
-    within "#favorite" do
-      page.should     have_content my_favorite.list_description
+  
+    within ".description" do
+      page.should have_content my_favorite.list_description
     end
   end
 end
