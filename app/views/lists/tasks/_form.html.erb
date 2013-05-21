@@ -7,7 +7,11 @@
               
   <%= f.button :submit, "Add", :class => 'btn-primary button_right' %>
     
-  <ol id="task">
-    <%= render 'lists/tasks/list', :list => @list %>
-  </ol>
+  <hr class="featurette-divider">
+  <p class="text-center text-info">Tasks</p>
+  <ul class='list'>
+    <div id="task">
+      <%= render 'lists/tasks/list', :list => @list %>
+    </dib>
+  </ul>
 <% end %>

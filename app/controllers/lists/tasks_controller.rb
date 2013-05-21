@@ -1,6 +1,6 @@
 class Lists::TasksController < ApplicationController
   before_filter :locate_list
-  before_filter :build_taks
+  before_filter :build_task
   respond_to :js
   
   def create
@@ -9,10 +9,15 @@ class Lists::TasksController < ApplicationController
     respond_with @task
   end
   
+  def destroy
+    @task.destroy
+    respond_with @task
+  end
+  
   private
 
-  def build_taks
-    @task ||= params[:id].present? ? Taks.find(params[:id]) : Task.new
+  def build_task
+    @task ||= params[:id].present? ? Task.find(params[:id]) : Task.new
     @task.attributes = params[:task] if params[:task]
   end    
   

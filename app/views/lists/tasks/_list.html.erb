@@ -1,4 +1,9 @@
-<hr class="featurette-divider">
-  <% @list.tasks.each do |task| %>
-    <li><strong><%= task.description %></strong></li>
-  <% end %>
+<% @list.tasks.each do |task| %>
+  <li><strong>
+    <%= link_to "#{task.description}", 
+      list_task_path(@list, task), 
+      :method => :delete, 
+      :remote => true,
+      :title => "Remove" %>
+  </strong></li>
+<% end %>
