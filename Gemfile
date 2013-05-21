@@ -13,10 +13,8 @@ gem 'pg'
 group :development, :test do
   gem 'rspec', '~>2.5'
   gem 'rspec-rails', '~>2.8'
-  gem "database_cleaner", "0.6.7"
+  gem "database_cleaner"
   gem 'factory_girl_rails'
-end
-
-group :test do
+  gem 'selenium-webdriver'
   gem 'capybara', '~>2.1'
 end
