@@ -5,5 +5,4 @@ class Favorite < ActiveRecord::Base
   
   delegate :description, :to => :list, :allow_nil => true, :prefix => true
   validates_presence_of :user, :list
-  
 end

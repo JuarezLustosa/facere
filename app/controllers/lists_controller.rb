@@ -18,6 +18,11 @@ class ListsController < ApplicationController
     respond_with @list
   end
   
+  def destroy
+    @list.destroy
+    respond_with @list
+  end
+  
   private
   def build_list
     @list ||= params[:id].present? ? List.find(params[:id]) : List.new

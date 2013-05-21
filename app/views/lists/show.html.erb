@@ -1,7 +1,8 @@
 <header>
   <h1>
-    <%= @list.description %> <small>
-    <%= link_to "edit", edit_list_path(@list) %></small>
+    <%= @list.description %> 
+    <small><%= link_to "edit", edit_list_path(@list) %> or </small>
+    <small><%= link_to "destroy", list_path(@list), :method => :delete %></small>
   </h1>
 </header>
 
