@@ -2,7 +2,7 @@ Facere::Application.routes.draw do
   devise_for :users
   
   resources :lists do
-    resources :tasks, :controller => 'lists/tasks'
+    resources :tasks, :controller => 'lists/tasks', :only => [:create, :destroy]
   end
   
   resources :favorites, :only => [:index, :create, :destroy]
